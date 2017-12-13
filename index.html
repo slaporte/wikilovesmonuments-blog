@@ -7,8 +7,8 @@
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<link rel="stylesheet" href="css/wmui-style-guide.min.css">
-	<title>WikimediaUI Style Guide – provided by Wikimedia Foundation design team</title>
+	<link rel="stylesheet" href="css/wlm-blog.min.css">
+	<title>Wiki Loves Monuments</title>
 	<script>
 		document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
 	</script>
@@ -26,76 +26,107 @@
 		<div class="content-box">
 			<a href="#content" class="is-aural is-focusable">Jump to content</a>
 			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
-			<h1 class="site__title"><a href="./"><span class="site__logo"></span>Wikimedia Style Guide</a></h1>
+			<h1 class="site__title"><a href="./">Wiki Loves<br><span class="site__big">Monuments</span></a></h1>
 			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
 				<i></i> <span>Menu</span>
 			</label>
-			<a href="https://github.com/wikimedia/WikimediaUI-Style-Guide" class="lnk--contribute" title="Fork and contribute on GitHub"><span>Contribute on </span>GitHub</a>
+			<a href="https://github.com/wikimedia/WikimediaUI-Style-Guide" class="lnk--contribute" title="Fork and contribute on GitHub">Vakil mosque Panorama by Mohammad Reza Domiri Ganji CC BY-SA 4.0</a>
 		</div>
 	</header>
+	<div class="join">
+		<div class="content-box">
+			<div class="col col--end">
+				<p class="join--left">Contribute images of local monuments for Wikipedia, and win prizes</p>
+				<p class="join--left"><a href="#" class="lnk--learn">Learn more</a></p>
+			</div>
+			<div class="col col--start">
+				<p class="join--right"><a href="#" class="btn--join">Join the contest &rarr;</a></p>
+				<p>or <a href="#" class="lnk--learn">organize local editions</a></p>
+			</div>
+		</div>
+	</div>
 	<div class="page">
 		<div class="content-box">
-			<div class="col col--start">
-				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
-				<nav id="nav--main" class="nav nav--main" role="navigation">
-					<ol>
-						<li class="nav__item is-on"><a href="index.html">Introduction</a></li>
-						<li class="nav__item"><a href="design-principles.html">Design principles</a></li>
-						<li class="nav__item"><a href="visual-style.html">Visual style</a>
-							<ul class="nav__sub-items">
-								<li class="nav__sub-item"><a href="visual-style.html">Principles</a></li>
-								<li class="nav__sub-item"><a href="visual-style_colors.html">Colors</a></li>
-								<li class="nav__sub-item"><a href="visual-style_typography.html">Typography</a></li>
-								<li class="nav__sub-item"><a href="visual-style_icons.html">Icons</a></li>
-								<li class="nav__sub-item"><a href="visual-style_imagery.html">Imagery</a></li>
-								<li class="nav__sub-item"><a href="visual-style_illustrations.html">Illustrations</a></li>
-							</ul>
-						</li>
-						<!-- <li class="nav__item"><a href="components.html">Components</a></li>
-						<li class="nav__item"><a href="patterns.html">Patterns</a></li>
-						<li class="nav__item"><a href="resources.html">Resources</a></li> -->
-					</ol>
-				</nav>
-			</div>
-			<div class="col col--end">
-				<main id="content" class="content" role="main">
-					<h1 class="page__title">Introduction</h1>
-					<p>Wikimedia is a global movement built by a diverse audience.</p>
-					<p>This style guide provides a general design direction for different kinds of interactive projects to serve our diverse communities. Designers and developers will find design recommendations to solve general problems, so that they can focus on the specific needs of their projects.</p>
-					<p>This is an ongoing work, you can always check online <a href="https://wikimedia.github.io/WikimediaUI-Style-Guide/">the latest version of the guide</a>. You are welcome to help make it grow.</p>
-
-					<section id="how-to-contribute">
-						<h2>How to contribute</h2>
-						<p>You can participate in many ways. The documentation is available in a Git repository with the design assets needed for your project. You can get all of them, change anything and send the changes back.</p>
-
-						<h3>Get the design repository</h3>
-						<p>The <a href="https://github.com/wikimedia/WikimediaUI-Style-Guide/">WikimediaUI Style Guide repository is available to download</a>. It contains this documentation, Sketch and SVG templates and resources. Select the “clone or download” button to get the repository.</p>
-
-						<h3>Commit changes</h3>
-						<p>Easily contribute to the content of the style guide by adding new recommendations, making corrections or adding examples in the form of images or videos: </p>
-						<p>If you have <a href="https://en.wikipedia.org/wiki/Git">Git</a> installed on your system, <a href="https://help.github.com/articles/cloning-a-repository/">cloning</a> is preferred way to get the contents since it allows you to contribute back. Technically changes can be submitted as usual in Git.</p>
-						<p>In order to publish the updated contents to be available live, go to the repo and launch the following command from a terminal: <code>git push -f origin master:gh-pages</code></p>
-						<p>Please add specific topics into a single commit and also take into account the <a href="https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines" target="_blank">Wikimedia commit message guidelines</a>.</p>
-
-						<h3>Contribute beyond content</h3>
-						<p>You can also help to improve how this documentation looks and works.</p>
-						<p>When modifying aspects such as the CSS styling you'll need to rebuild the documentation files using <a href="http://gruntjs.com/">Grunt</a> (which requires <a href="https://docs.npmjs.com/getting-started/installing-node">Node.js and npm</a>). The first time you have to run <code>npm install</code> in a terminal from the style guide's main folder in order to get all necessary dependencies. Every time you want to rebuild the CSS files for the documentation you just need to launch the <code>grunt</code> command in a terminal, also from the main folder.<br>
-						We're using <a href="http://stylelint.io/">stylelint</a> to ensure the CSS <a href="https://github.com/wikimedia/stylelint-config-wikimedia/">aligns with our</a> <a href="https://www.mediawiki.org/wiki/Manual:Coding_conventions/CSS">coding conventions</a>.</p>
-						<p>These requirements provide our contributors a reliable environment and our viewers a performant experience.</p>
+			<div class="col col--stories">
+				<main id="content" class="content story" role="main">
+					<h1 class="page__title">Stories</h1>
+					<section>
+						<div class="story__thumb">
+							<img src="http://www.wikilovesmonuments.org/wp-content/uploads/2017/01/800px-Mandel_zoom_11_satellite_double_spiral-370x278.jpg" alt="Wiki Loves Monuments 2016 statistics">
+						</div>
+						<h2 class="story__headline">Wiki Loves Monuments 2016 statistics</h2>
+						
+						<p class="story__summary">In 2016, Wiki Loves Monuments (WLM) was a top ranking Wikimedia community initiative in terms of attention raised. In this post,…</p>
+						<div class="story__byline"><p><a class="story__author" href="#">lilyofthewest</a> on Aug 25, 2017</p></div>
+					</section>
+					<section>
+						<div class="story__thumb">
+							<img src="http://www.wikilovesmonuments.org/wp-content/uploads/2017/11/image10-370x215.jpg" alt="Winners of Wiki Loves Monuments 2017 in Iran">
+						</div>
+						<h2 class="story__headline">Winners of Wiki Loves Monuments 2017 in Iran</h2>
+						
+						<p class="story__summary">We are thrilled to announce the 10 winning photos of Wiki Loves Monuments 2017 in Iran. These photos are selected…</p>
+						<div class="story__byline"><p><a class="story__author" href="#">lilyofthewest</a> on Nov 4, 2017</p></div>
+					</section>
+					<section>
+						<div class="story__thumb">
+							<img src="http://www.wikilovesmonuments.org/wp-content/uploads/2017/09/Kazan_Kremlin_exterior_view_08-2016_img3-370x208.jpg" alt="Wiki Loves Monuments banner contest">
+						</div>
+						<h2 class="story__headline">Wiki Loves Monuments banner contest</h2>
+						<p class="story__summary">Wikivoyage, a free travel guide everyone can edit, is one of Wikimedia sister projects. High-quality illustrations are central to a…</p>
+						<div class="story__byline"><p><a class="story__author" href="#">lilyofthewest</a> on Sep 5, 2017</p></div>
 					</section>
 				</main>
+			</div>
+			<div class="col col--winners">
+				<div class="page__gallery">
+					<h1>Past winners</h1>
+					<a href="#">
+						<figure>
+							<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Landgericht_Berlin%2C_Littenstra%C3%9Fe%2C_Eingangshalle_%282%29%2C_160906%2C_ako.jpg/640px-Landgericht_Berlin%2C_Littenstra%C3%9Fe%2C_Eingangshalle_%282%29%2C_160906%2C_ako.jpg">
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Royal_Albert_Hall_-_Central_View_169.jpg/640px-Royal_Albert_Hall_-_Central_View_169.jpg">
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Perch_Rock_Lighthouse.jpg/640px-Perch_Rock_Lighthouse.jpg">
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Torrechiara_luci_al_tramonto.jpg/640px-Torrechiara_luci_al_tramonto.jpg">
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/0000140_Wat_Arun_01.jpg/640px-0000140_Wat_Arun_01.jpg">
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Blue_Hour_at_Pakistan_Monument.jpg/640px-Blue_Hour_at_Pakistan_Monument.jpg">
+						</figure>
+					</a>
+					<p><a href="#" class="btn--more">View more</a></p>
+					<h1>Locations</h1>
+					<img class="gallery__thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Participating_Countries_WLM_2017.svg/640px-Participating_Countries_WLM_2017.svg.png">
+					<p><a href="#" class="btn--more">View all locations</a></p>
+				</div>
 			</div>
 		</div>
 	</div>
 	<footer id="footer" class="footer">
 		<div class="content-box">
 			<ul class="footer__list">
-				<li><a href="https://github.com/wikimedia/WikimediaUI-Style-Guide">Contribute on GitHub</a></li>
-				<li><a href="https://twitter.com/@WikimediaUX" title="Follow Wikimedia User Experience team account on Twitter">Follow @WikimediaUX</a></li>
-				<li><a href="https://lists.wikimedia.org/mailman/listinfo/design" title="Join Wikimedia Design mailing list">Join mailing list</a></li>
+				<li><a href="#">Source code on GitHub</a></li>
+				<li><a href="https://twitter.com/wikimonuments" title="Follow Wiki Loves Monuments on Twitter">Follow @wikimonuments</a></li>
+				<li><a href="https://lists.wikimedia.org/mailman/listinfo/wikilovesmonuments" title="Join the Wiki Loves Monuments mailing list">Join mailing list</a></li>
 			</ul>
-			<p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International</a>, additional terms may apply. <br>Code is available under the MIT license.</p>
-			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+			<p>Text is available under the <a href="#" target="_blank">Creative Commons Attribution-ShareAlike 3.0 Unported</a>, additional terms may apply. <br>Code available under the MIT license.</p>
 		</div>
 	</footer>
 </body>

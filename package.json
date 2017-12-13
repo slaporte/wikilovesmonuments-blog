@@ -1,14 +1,14 @@
 {
-  "name": "wmui-style-guide",
-  "version": "0.1.0",
-  "description": "Wikimedia User Interface Style Guide",
+  "name": "wlm-blog",
+  "version": "2017.12.1",
+  "description": "Wiki Loves Monuments Blog",
   "keywords": [
-    "ui"
+    "blog"
   ],
-  "homepage": "https://www.mediawiki.org/wiki/Design",
+  "homepage": "http://wikilovesmonuments.org/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wikimedia/WikimediaUI-Style-Guide.git"
+    "url": "__"
   },
   "private": true,
   "license": "MIT",

@@ -1,4 +1,7 @@
-Principal Authors (major contributors)
+Wiki Loves Monments Blog Style Authors 
+Stephen LaPorte <stephen.laporte@gmail.com>
+
+WikimediaUI Style Guide Principal Authors
 
 Volker E. <volker.e@wikimedia.org>
 Pau Giner <pginer@wikimedia.org>

@@ -1,0 +1,853 @@
+@import 'vendor/wikimedia-ui-base.css';
+@import 'partials/fonts.css';
+@import 'partials/fonts-loaded.css';
+@import 'vendor/normalize.css';
+
+:root {
+	--font-weight-thin: 200;
+	--font-weight-base: 400;
+	--font-weight-bold: 700;
+
+	--wlm-light-link: rgb(162, 190, 247);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var( --wmui-color-base80 ); /* FIXME: var; */
+	color: var( --color-base );
+	margin: 0;
+	font-family: var( --font-family-sans--fallback ); /* Fallback */
+	font-size: 1.6rem;
+	line-height: var( --line-height-base );
+}
+
+/* ::: Text Block-Level Elements ::: */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 3.2rem 0 0;
+	line-height: 1.25;
+	transition: font-size var( --transition-medium ), font-weight var( --transition-medium );
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var( --font-weight-bold );
+}
+
+h1 {
+	font-family: var( --font-family-serif--fallback ); /* Fallback */
+	font-size: 3.2rem;
+	font-weight: var( --font-weight-base );
+}
+
+h2 {
+	font-size: 2.2rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+p {
+	margin: 3.2rem 0 0;
+	line-height: 1.5;
+}
+	h1 + p,
+	h2 + p,
+	h3 + p,
+	h4 + p,
+	h5 + p,
+	h6 + p,
+	p + p,
+	p:first-child {
+		margin: 0.8rem 0 0;
+	}
+
+ul {
+	margin: 0.8rem 0;
+	padding: 0 1.6rem;
+}
+
+figure {
+	margin: 0.8rem 0 0;
+}
+
+img {
+	display: block;
+	/*max-width: 100%;*/
+	margin: 1.6rem 0 0;
+}
+
+/* ::: Inline Elements ::: */
+a {
+	color: var( --color-primary );
+	text-decoration: none;
+}
+	a:hover {
+		text-decoration: underline;
+	}
+	a:active {
+		color: var( --color-primary--active );
+	}
+
+code {
+	background-color: var( --background-color-code );
+	display: inline-block;
+	padding: 0.2rem 0.4rem;
+	font-size: 1.4rem;
+}
+
+/* ::: General Classes ::: */
+/* ::: Text for Screen Readers only ::: */
+.is-aural {
+	display: block;
+	position: absolute;
+	clip: rect( 1px, 1px, 1px, 1px );
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	overflow: hidden;
+}
+	.is-aural.is-focusable:active,
+	.is-aural.is-focusable:focus {
+		position: static;
+		clip: auto;
+		width: auto;
+		height: auto;
+		margin: 0;
+		text-decoration: underline;
+		overflow: visible;
+	}
+
+.clearfix:before,
+.clearfix:after,
+.content-box:before,
+.content-box:after {
+	content: ' ';
+	display: table;
+}
+
+.clearfix:after,
+.content-box:after {
+	clear: both;
+}
+
+.content-box {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 1.6rem; /* FIXME: var( --grid-padding ); */
+	padding-right: 1.6rem;
+}
+
+
+/* ::: Structure ::: */
+.header {
+/*	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;*/
+	min-height: 40rem;
+	line-height: 6.4rem;
+	background-image: url( https://upload.wikimedia.org/wikipedia/commons/b/b3/Vakil_mosque_Panorama.jpg );
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+
+	.col-sm-5 {
+		text-align: right;
+	}
+
+	.site__title {
+		color: var( --wmui-color-base100 );
+		background-color: rgba( 34, 34, 34, 0.75 ); /* TODO: make variable */
+		margin-top: 31.6rem;
+		height: 8.4rem;
+		font-family: var( --font-family-serif--fallback );
+		font-size: 1.3rem;
+		font-weight: var( --font-weight-thin );
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+	}
+		.site__title a {
+			color: inherit;
+			display: inline-block;
+			/*line-height: 64px;*/
+			height: 8.4rem;
+			margin: 0 3rem;
+			padding: 1.5rem 0;
+		}
+		.site__title a:hover {
+			color: var( --wmui-color-base10 );
+			text-decoration: none;
+			transition: color var( --transition-medium );
+		}
+
+		.site__logo {
+			background-image: url( '../img/Wikimedia-Foundation-logo.svg' ); /* stylelint-disable-line function-url-quotes */
+			background-size: 24px;
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			margin-bottom: 0.4rem;
+			margin-right: 0.8rem;
+			vertical-align: middle;
+		}
+
+		.site__big {
+			font-family: var( --font-family-serif--fallback ); /* Fallback */
+			font-size: 3.2rem;
+			font-weight: var( --font-weight-base );
+		}
+
+		.topbar {
+			padding: 0;
+    		width: 100%;
+    		margin: 0;
+    		background: #222;
+		}
+
+	.story__title {
+		color: var( --wmui-color-base100 );
+		background-color: rgba( 34, 34, 34, 0.75 ); /* TODO: make variable */
+		height: 8.4rem;
+		font-family: var( --font-family-serif--fallback );
+		font-size: 1.3rem;
+		font-weight: var( --font-weight-thin );
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	/* ... Navigation button ... */
+	.btn--nav-main {
+		position: absolute;
+		top: 1rem; /* FIXME: not `0.8rem` */
+		width: 4.2rem;
+		height: 4.2rem;
+		cursor: pointer;
+	}
+
+	/* Fake hamburger icon */
+	.btn--nav-main i {
+		display: block;
+		height: 4.2rem;
+		transition: var( --transition-medium );
+	}
+
+	.btn--nav-main i:before,
+	.btn--nav-main i:after {
+		content: '';
+		background-color: var( --wmui-color-base20 );
+		width: 2.4rem;
+		height: 2px;
+		position: absolute;
+		top: 12px;
+		left: 0;
+	}
+
+	.btn--nav-main i:after {
+		top: 20px;
+		box-shadow: 0 8px 0 var( --wmui-color-base20 );
+	}
+
+	.btn--nav-main span {
+		display: block;
+		position: absolute;
+		clip: rect( 1px, 1px, 1px, 1px );
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+	}
+
+	/* ... GitHub Contribute Link ... */
+	.lnk--contribute {
+		font-size: 1.4rem;
+	}
+
+.join {
+	font-size: 120%;
+	padding: 2rem;
+}
+
+	.join--left {
+		padding: 0 10rem 1rem 0;
+	}
+
+	.lnk--learn {
+		color: var( --wmui-color-red30 );
+		font-weight: var( --font-weight-bold );
+	}
+
+	.join--right {
+		font-size: 100%;
+		padding: 1.4rem 0;
+	}
+
+	.btn--join {
+	    background: var( --wmui-color-red30 );
+	    color: var( --wmui-color-base100 );
+		padding: 1rem 2rem;
+		line-height: 1.5rem;
+	}
+
+
+/* ... Content ... */
+.page {
+	background-color: var( --background-color-base );
+	position: relative;
+	/*margin-top: 40rem;*/
+	padding: 6.4rem 0;
+	box-shadow: 0 1px 4px 0 rgba( 0, 0, 0, 0.25 );
+	overflow-y: hidden;
+}
+
+.content {
+	float: left;
+	width: 100%;
+}
+
+.col {
+	float: left;
+	position: relative;
+	min-height: 1px;
+}
+	.col--start {
+		padding: 0;
+	}
+	.col--end {
+		padding: 0;
+	}
+
+/* ... Stories ... */
+
+.story {
+	font-size: 110%;
+}
+
+	.story__thumb {
+		float: left;
+		width: 100px;
+		height: 150px;
+		overflow: hidden;
+		margin-right: 2rem;
+	}
+
+	.story__thumb img {
+		margin: 0;
+		min-width: 100%;
+		min-height: 100%;
+	}
+
+	.story section {
+		min-height: 150px;
+		position: relative;
+		margin-right: 2rem;
+	}
+
+	.story section h2,
+	.story section p {
+		padding-left: 120px;
+	}
+
+	.story__byline {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	.size-large {
+		max-width: 100%;
+	}
+
+	.lnk--back {
+		color: var( --wmui-color-red30 );
+		font-weight: var( --font-weight-bold );
+		font-size: 120%;
+	}
+
+/* ... Gallery ... */
+
+.gallery {
+	color: var( --wmui-color-base100 );
+	background: var( --wmui-color-base10 );
+	padding-bottom: 4rem;
+}
+
+.gallery .content {
+	padding-bottom: 3.2rem;
+	border-bottom: 1px solid var( --wmui-color-base100 );
+}
+
+.gallery img {
+	width: 100%;
+}
+
+.gallery__info {
+	margin-top: 3.2rem;
+	font-weight: var( --font-weight-thin );
+	text-align: center;
+}
+.gallery__desc {
+	font-weight: var( --font-weight-thin );
+	font-size: 90%;
+}
+
+.page__gallery h1 {
+	margin-top: 0;
+}
+
+.page__gallery {
+	font-size: 0;
+}
+
+.page__gallery a {
+	font-size: 16px;
+	display: inline-block;
+	margin-bottom: 8px;
+	width: calc( 50% - 4px );
+	margin-right: 8px;
+	overflow: hidden;
+}
+
+.page__gallery a:nth-of-type( 2n ) {
+	margin-right: 0;
+}
+
+.gallery__thumb {
+	width: 100%;
+}
+
+.btn--more {
+	color: var( --wmui-color-red30 );
+	font-weight: var( --font-weight-bold );
+}
+
+/* ... Main Navigation ... */
+.nav--main {
+	background-color: var( --background-color-base ); /* needed for menu appearance on mobile below */
+	/*margin-top: 6.4rem;*/
+}
+
+.nav--main li:not( .is-on ) ul,
+.trigger--nav-main {
+	display: none;
+}
+
+.nav--main ol,
+.nav--main ul {
+	padding: 0;
+}
+.nav--main ol:first-child {
+	margin: 0;
+}
+
+.nav--main li {
+	padding: 0;
+	list-style: none none;
+}
+
+.nav--main > ol > li {
+	margin-bottom: 0.4rem;
+}
+
+.nav--main a {
+	color: var( --color-base );
+	display: block;
+	padding: 0.8rem 1.2rem;
+	font-size: 1.6rem;
+	text-decoration: none;
+	transition: background-color var( --transition-medium ), color var( --transition-medium ), padding var( --transition-medium );
+}
+.nav--main a:hover,
+.nav--main a:focus {
+	background-color: var( --background-color-code );
+	color: var( --color-base--emphasized );
+}
+.nav--main .is-on > a {
+	background-color: var( --background-color-primary );
+	color: var( --color-primary );
+	/* border-left: 2px solid var( --color-primary ); */
+	border-radius: var( --border-radius-base );
+	font-weight: var( --font-weight-bold );
+	cursor: default;
+	pointer-events: none;
+}
+
+.nav__sub-items {
+	margin-top: 1.2rem;
+	margin-bottom: 1em; /* FIXME: replace with rem and mt */
+}
+.nav__sub-items li {
+	margin-left: 3.6rem;
+}
+.nav--main .nav__sub-items a { /* stylelint-disable-line no-descending-specificity */
+	color: var( --wmui-color-base20 );
+	border-left: var( --border-width-base ) solid var( --wmui-color-base80 );
+    border-radius: 0 var( --border-radius-base ) var( --border-radius-base ) 0;
+	padding-left: 1.6rem;
+	font-size: 1.4rem;
+	transition: background-color var( --transition-medium ), color var( --transition-medium );
+}
+
+.nav--main .nav__sub-item.is-on a {
+	background-color: var( --background-color-base );
+	color: var( --color-base--active );
+	border-left-color: var( --wmui-color-base0 );
+	font-weight: var( --font-weight-bold );
+}
+
+
+/* ::: Content ::: */
+.page__parent-title {
+	color: var( --color-base--subtle );
+	margin-top: -2.8rem;
+
+}
+
+.page__title {
+	margin-top: -0.8rem;
+}
+
+.page__parent-title + .page__title {
+	margin-top: -0.4rem;
+}
+
+/* ... Color ... */
+.color-palette {
+	margin-top: 2.4rem;
+}
+
+.color-palette ol {
+	margin: 0;
+	padding: 0;
+}
+.color {
+	color: var( --color-base--emphasized );
+	list-style: none none;
+	display: inline-block;
+	margin-bottom: 3.2rem;
+	border: var( --border-base );
+	border-radius: var( --border-radius-base );
+}
+
+	.color--dark,
+	.color__wcag-level span {
+		color: var( --color-base--inverted );
+	}
+
+	.color--dark .color__wcag-level span {
+		color: var( --color-base--emphasized );
+	}
+
+	.color__name {
+		font-weight: var( --font-weight-bold );
+	}
+
+	.color__wcag-level {
+		display: block;
+		position: absolute;
+		bottom: 1.2rem;
+		left: 1.2rem;
+	}
+
+	.color__swatch {
+		position: relative;
+		height: 16rem;
+		padding: 1.2rem;
+		font-size: 1.4rem;
+	}
+
+	.color__codes {
+		color: var( --color-base );
+		padding: 1.2rem;
+	}
+
+	.color-code {
+		background-color: inherit;
+		display: block;
+		padding: 0;
+		font-family: var( --font-family-sans--fallback ); /* Fallback */
+	}
+
+/* ::: Footer ::: */
+.footer {
+	color: var( --color-base );
+	clear: both;
+	padding: 2.4rem 0;
+	font-size: 1.2rem;
+	font-weight: var( --font-weight-base );
+}
+
+.footer__list {
+	margin: 0;
+	padding: 0;
+}
+.footer__list li {
+	float: left;
+	margin-left: 2.4rem;
+	padding: 0;
+}
+.footer__list li:first-child {
+	list-style: none none;
+	margin-left: 0;
+}
+.footer__list a {
+	font-weight: var( --font-weight-bold );
+}
+
+.lnk--wikimedia-project {
+	display: inline-block;
+	padding: 0.4rem 0;
+	text-transform: uppercase;
+}
+
+
+/* ::: Page-specific Styles ::: */
+.page--visual-style-icons img { /* FIXME: generalize imagery styles */
+	background-color: var( --wmui-color-base80 ); /* FIXME: var; */
+	padding: 2.4rem;
+}
+
+
+/* ::: Media Queries ::: */
+/* ... Smartphone only ... */
+@media ( max-width: 767px ) {
+	.nav--main {
+		position: absolute;
+		top: -3.2rem;
+		left: -1.6rem;
+		right: -1.6rem;
+		padding-bottom: 1.6rem;
+		box-shadow: 0 2px 2px 0 rgba( 0, 0, 0, 0.25 ); /* FIXME: Update wmui-base */
+		z-index: 1;
+		transform: translateY( -200% );
+		transition: left var( --transition-medium ), right var( --transition-medium ), transform var( --transition-medium );
+	}
+	.trigger--nav-main:checked + .nav--main {
+		transform: translateY( 0 );
+	}
+
+	.page__title {
+		margin-top: -0.4rem;
+		font-size: 2.4rem;
+		font-weight: var( --font-weight-bold );
+	}
+}
+
+/* ... Smartphone portrait ... */
+@media ( min-width: 240px ) {
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.8rem;
+	}
+
+	.content-box {
+		transition: padding var( --transition-medium );
+	}
+
+	.site__title {
+		text-align: center;
+	}
+
+	.site__title a {
+		padding-right: 3.2rem;
+	}
+
+	.site__logo {
+		opacity: 0;
+		transition: opacity var( --transition-medium );
+	}
+
+	.lnk--contribute span {
+		display: none;
+	}
+
+	.nav--main a {
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+	}
+
+	.col--start,
+	.col--end {
+		width: 100%;
+	}
+
+	figure {
+		margin-left: -1.6rem;
+		margin-right: -1.6rem;
+	}
+
+	.color {
+		width: 100%;
+	}
+}
+
+/* ... Smartphone+ portrait ... */
+@media ( min-width: 414px ) {
+	.content-box {
+		padding-left: 3.2rem;
+		padding-right: 3.2rem;
+	}
+
+	.site__logo {
+		opacity: 1;
+	}
+
+	.site__title a {
+		padding-right: 0;
+	}
+
+	.nav--main {
+		left: -3.2rem;
+		right: -3.2rem;
+	}
+
+	.nav--main a {
+		padding-left: 3.2rem;
+		padding-right: 3.2rem;
+	}
+
+	.color {
+		width: 18rem;
+		margin-right: 2.4rem;
+	}
+
+	.color:nth-child( 2n ) {
+		margin-right: 0;
+	}
+
+	.lnk--contribute {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 3.2rem;
+		text-align: right;
+	}
+
+	figure {
+		margin-left: -3.2rem;
+		margin-right: -3.2rem;
+	}
+}
+
+/* ... Smartphone landscape ... */
+@media ( min-width: 568px ) {
+	.lnk--contribute span {
+		display: inline;
+		opacity: 0;
+		transition: opacity var( --transition-medium );
+	}
+}
+
+/* ... Tablet ... */
+@media ( min-width: 768px ) {
+	.content-box {
+		max-width: 960px;
+	}
+
+	.btn--nav-main {
+		display: none;
+	}
+
+	.site__title {
+		float: left;
+		text-align: left;
+	}
+
+	.lnk--contribute {
+		display: inline;
+		float: right;
+		position: static;
+		top: auto;
+		right: auto;
+		margin-top: 37rem;
+		background-color: var( --wmui-color-base80 );
+		line-height: 1rem;
+		padding: 1rem;
+	}
+
+		.lnk--contribute span {
+			display: inline;
+			opacity: 1;
+		}
+
+	.col--start {
+		width: 33.33333333%;
+		padding-right: 1.6rem;
+	}
+	.col--end {
+		width: 66.66666667%;
+		padding-left: 1.6rem;
+	}
+
+	figure {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+/* ... Tablet+ / Netbook ... */
+@media ( min-width: 992px ) {
+	.content-box {
+		width: 960px;
+		max-width: none;
+	}
+
+	.col--start {
+		width: 25%;
+	}
+	.col--end {
+		width: 75%;
+	}
+
+	.col--half {
+		width: 50%;
+	}
+
+	/* Index page layout */
+	.col--stories {
+		width: 60%;
+	}
+
+	.col--winners {
+		width: 40%;
+	}
+
+	.color {
+		width: 20rem;
+		margin-right: 2.4rem;
+	}
+	.color:nth-child( 2n ) {
+		margin-right: 2.4rem;
+	}
+	.color:nth-child( 3n ) {
+		margin-right: 0;
+	}
+}
+
+@media ( min-width: 1200px ) {
+	.content-box {
+		width: 1140px;
+	}
+}
